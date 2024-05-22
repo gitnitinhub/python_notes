@@ -1,0 +1,217 @@
+Relational operators: used to perform comparison; Output of relational operator will always be either True or False
+>, <, >=, <=, ==, !=
+
+print(10 > 5) #True
+print(5 > 10) #False
+print(10 > 10) #False
+
+print()
+
+print(10 < 5) #False
+print(5 < 10) #True
+print(10 < 10) #False
+
+print()
+
+print(10 <= 5) #False
+print(5 <= 10) #True
+print(10 <= 10) #True
+
+print()
+
+print(10 >= 5) #True
+print(5 >= 10) #False
+print(10 >= 10) #True
+
+print()
+
+print(10 == 10) #True
+print(10 == 5) #False
+
+print()
+
+print(10 != 10) #False
+print(10 != 5) #True
+
+Tip: a = 5 means assigning value 5 to variable a; a == 5 means checking if the value of variable a is 5.
+
+Compound Assignment/Shorthand operator
+a = a + 5 is same as a+=5
+a = a - 2 is same as a-=2
+a = a * 3 is same as a*=3
+a = a / 4 is same as a/=4
+a = a % 5 is same as a%=5
+a = a // 5 is same as a//=5
+
+a = 10
+a+=2  #[Now value of a is 12]
+a-=5  #[Now value of a is 7]
+a*=2  #[Now value of a is 14]
+a//=5 #[Now value of a is 2]
+a%=2  #[Now value of a is 0]
+print(a)  #0
+
+Tip: ++ and -- operators are not available in python
+
+Types of statements
+1. Sequential statement: 
+   These are the statements that executed exactly for one time; these statements can't be skipped nor they can be executed for more than one time.
+   
+  An Example: In this example all statements of the code will be executed for one time; no statement can be skipped no statement can be executed for more than one time.
+  
+  #WAP to compute simple interest
+  princple_amount = 1000
+  interest_rate = 7.5
+  time_period = 2
+
+  simple_interest = (princple_amount * interest_rate * time_period)/100
+
+  print("Simple interest amount is", simple_interest)
+  
+  Output
+  Simple interest amount is 150.0
+   
+2. Selection statement
+   The selection statement are going to be executed for zero or one time subjected to a condition such that no statement can be executed for more than one time.
+   e.g. if, if-else, nested-if, elif (No switch case statement is in python programming)
+   
+   if statement: 
+   Syntax:
+   if condition:
+    statement to be executed when if condition is true
+   
+   An Example: Say in the month of march; a store announces special scheme on the occassion on women's day that all women customer will be given 5% dicsount on the total bill amount. you need to take input product cost and product quantity along with gender then you have to print total bill payable.
+
+    An Example 
+    product_cost = 100
+    product_quantity = 5
+    gender = 'male'   #female
+
+    #code to compute bill amount without any discount
+    total_bill = product_cost * product_quantity
+
+    #check if gender is female; if yes then give 5% discount
+    if gender == 'female':
+        total_bill = total_bill * 0.95
+
+    print("total bill is", total_bill)
+    
+  if else statement
+  Syntax
+  if condition:
+    statement to be executed when if condition is true
+  else:
+    statement to be executed when if condition is false
+  
+  An Example
+  WAP to print "Minor" if a person is less than 18 years of age; otherwise print "Adult" 
+  
+  age = 21    #18, 13
+
+  if age < 18:
+      print("Minor")
+  else:
+      print("Adult")
+
+  print("Thanks for using our service")
+  
+  Nested if: if inside another is statement
+  WAP to print remark "First division","pass" or "fail" based on the percentage such that
+  percentage >= 60.00 then First division
+  percentage >= 40.00 then pass
+  percentage < 40.00 then Fail
+  
+  percentage = 32.00  #65.00, 45.00
+  if percentage >= 60.00:
+      print("First division")
+  else:
+      #you are here means percentage < 60.00
+      if percentage >= 40.00:
+          #you are here means percentage is more than or equals to 40.00 but less than 60.00
+          print("Pass")
+      else:
+          #you are here means percentage is less than 40.00
+          print("Fail")
+  
+  Tip: python programming is an indentation oriented language means when we want to start a block (of if, else, while etc) then we have to shoft the code toward right hand side. This practice of writing the code is called indentation.
+  
+  For the deep level of nesting that indentation makes the code unreadable expecially in the case of nested if.
+  
+  An Example
+  WAP to print grade based on the percentage such that
+  percentage >= 90.00 then A
+  percentage >= 75.00 then B
+  percentage >= 60.00 then C
+  percentage >= 45.00 then D
+  percentage >= 33.00 then E
+  percentage < 33.00 then F
+  
+  per = 28.00 #98.00, 68.00, 48.00, 38.00, 88.00
+
+  if per >= 90.00:
+      print("A")
+  else:
+      #you are here means per < 90.00
+      if per >= 75.00:
+          print("B")
+      else:
+          #you are here means per < 75.00
+          if per >= 60.00:
+              print("C")
+          else:
+              #you are here means per < 60.00
+              if per >= 45.00:
+                  print("D")
+              else:
+                  #you are here means per < 45.00
+                  if per >= 33.00:
+                      print("E")
+                  else:
+                      print("F")
+  
+  The elif statement
+  
+  Sample code - 01
+  if condition-01:
+    statement-X
+  else:
+    if condition-02:
+      statement-Y
+      
+  Sample code - 02
+  if condition-01:
+    statement-X
+  elif condition-02:
+    statement-Y
+    
+  Tip: the Sample code - 01 and Sample code - 02 are same.
+  
+  per = 88.00 #98.00, 68.00, 48.00, 38.00, 28.00
+
+  if per >= 90.00:
+      print("A")
+  elif per >= 75.00:
+      print("B")
+  elif per >= 60.00:
+      print("C")
+  elif per >= 45.00:
+      print("D")
+  elif per >= 33.00:
+      print("E")
+  else:
+      print("F")
+      
+  Ternary operator
+  statement-X if condition else statement-Y
+  
+  the above code is same as
+  if condition
+    statement-X
+  else
+    statement-Y
+    
+  An Example: WAP print remark even or odd for a number i.e. if number is divisible by 2 then "Even" otherwise "Odd"
+  no = 23 #24
+  print("Even") if no % 2 == 0 else print("odd")
+  
+  Tip: use ternary operator only when body of if and else is for one statement only.
