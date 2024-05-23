@@ -215,3 +215,47 @@ Types of statements
   print("Even") if no % 2 == 0 else print("odd")
   
   Tip: use ternary operator only when body of if and else is for one statement only.
+   Logical operator: Used to join two or more conditions
+  e.g. and, or, not
+  C1    C2     C1 and C2     C1 or C2   not c2
+  True  True   True          True       False
+  True  False  False         True       True
+  False True   False         True
+  False False  False         False
+  
+  For the and operator; if the left hand side condition is false then right hand side condition is not evaluated because the untimate result will be false no matter whether the right hand side condition is true or false.
+  
+  For the or operator; if the left hand side condition is true then right hand side condition is not evaluated because the untimate result will be true no matter whether the right hand side condition is true or false.
+  
+  An example or of and operator
+  WAP to check if a person is eligible for voting such that-
+  (i) age or voterm must be 18 or more; and
+  (ii) voter must be indian citizen
+  
+  age = 18    #27, 14
+  nationalilty = 'indian' #bhutani
+
+  if age >= 18 and nationalilty == 'indian':
+      print("Welcome! Eligible for voting")
+  else:
+      print("Sorry! Not Eligible for voting")
+
+  print("Bye bye")
+  
+  Run-01:
+  age = 18
+  nationalilty = bhutani
+  18 >= 18 and 'bhutani' == 'indian'
+  True and False
+  False
+  Sorry! Not Eligible for voting
+  Bye bye
+  
+  Run-02:
+  age = 14
+  nationalilty = 'indian'
+  14 >= 18 and 'indian' == 'indian'
+  False and Not Evaluated
+  False
+  Sorry! Not Eligible for voting
+  Bye bye
