@@ -1,0 +1,280 @@
+ 
+  WAP to check if a student is eligible for scholaship or not such that
+  (i) All female students are eligible;
+  (ii) All students whose percentage is more than 75.00 are also eligible
+  
+  per = 58.00 #58.00
+  gender = 'male'   #'female'
+
+  if per > 75.00 or gender == 'female':
+      print("Eligible for Scholarship")
+  else:
+       print("try next time")
+
+  print("bye bye")
+  
+  An example for combination of and, or
+  WAP to check a scholar is eligible for activity such that
+  (i) All scholars whose percentage is more than 75.00 are eligible
+  (ii) For female scholars 5% relaxation in percentage criteria
+  
+  case-01:
+  percentage = 72.00
+  gender = 'female'
+  output: Eligible
+  
+  case-02:
+  percentage = 70.00
+  gender = 'female'
+  output: Not Eligible
+  
+  per = 58.00 #58.00
+  gender = 'male'   #'female'
+
+  if per > 75.00 or (per > 70.00 and gender == 'female'):
+      print("Eligible for Activity")
+  else:
+       print("Not Eligible for Activity")
+
+  print("bye bye")
+  
+  An Example of not operator
+  no = 23 #24
+  if not (no % 2 == 0):
+    print("Odd")
+  else:
+    print("Even")
+    
+  Run-01:
+  no = 23
+  Output: Odd
+  
+  Run-02
+  no = 24
+  Output: Even
+
+3. Iteration statement:
+   The iteration statement is going to be executed for zero or more times.
+   1. while loop
+   2. for loop
+   Tip: No do-while loop
+   a. Nested loop
+
+WAP to print Masai for 5 times
+print("Masai")
+print("Masai")
+print("Masai")
+print("Masai")
+print("Masai")
+
+Now extends this example to print Masai for 100 times.
+Now instead of printing Masai print Masai School, Bengaluru
+
+If the same code is written for multiple times then these codes are called WET (Write Everything Twice) code such code is very difficult to maintain and scale.
+Solution: We want to keep the code DRY (Don't Repeat Yourself) to do the same we can use loops (i.e. iteration statements)
+
+while loop
+Syntax:
+while condition:
+  body [to be executed until condition is false]
+
+Execution Pattern
+condition (t) -> body -> condition (t) -> body .....condition (F)
+
+An Example
+WAP to print "Masai" for five times
+i = 1
+while i <= 5: # i <= 5: condition
+  #body of loop starts here
+  print("Masai")
+  i+=1  #i+=1 is same is i = i + 1
+  #body of loop ends here
+print("Thanks")
+Execution
+i = 1 [1 <= 5: True]
+i = 2 [2 <= 5: True]
+i = 3 [3 <= 5: True]
+i = 4 [4 <= 5: True]
+i = 5 [5 <= 5: True]
+i = 6 [6 <= 5: false]
+
+Output
+Masai
+Masai
+Masai
+Masai
+Masai
+Thanks
+
+Another Example
+WAP to print the following series
+0 2 4 6 8 10
++-+-+-+-+-+-+-+
++ Solution-01 + 
++-+-+-+-+-+-+-+
+a = 0
+while a <= 10:
+  print(a, end = ' ')
+  a+=2
+
+Execution Pattern
+a = 0 [0 <= 10: True]
+a = 2 [2 <= 10: True]
+a = 4 [4 <= 10: True]
+a = 6 [6 <= 10: True]
+a = 8 [8 <= 10: True]
+a = 10 [10 <= 10: True]
+a = 12 [12 <= 10: False]
+
+Output
+0 2 4 6 8 10 
+
++-+-+-+-+-+-+-+
++ Solution-02 + 
++-+-+-+-+-+-+-+
+a = 0
+while a <= 5:
+  print(a*2, end = ' ')
+  a+=1
+  
+Execution Pattern
+a = 0 [0 <= 5: True]
+a = 1 [1 <= 5: True]
+a = 2 [2 <= 5: True]
+a = 3 [3 <= 5: True]
+a = 4 [4 <= 5: True]
+a = 5 [5 <= 5: True]
+a = 6 [6 <= 5: False]
+
+Output
+0 2 4 6 8 10 
+
+What is output of following code?
+i = 1
+while i < 1:
+  print("Thumbs Up")
+  i+=1
+
+No output because the loop will not be executed even for one time
+
+What is output of following code?
+i = 1
+while i <= 1:
+  print("Thumbs Up")
+  i+=1
+  
+Output: Thumbs Up (only for one time)
+
+What is output of following code?
+i = 1
+while i <= 1:
+  #body starts here
+  print("Thumbs Up")  #body of while loop
+  #body ends here
+i+=1  #outside the body of while loop
+
+Execution Pattern
+i = 1 [1 <= 1: True]
+i = 1 [1 <= 1: True]
+.
+.
+.
+
+Output
+Thumbs Up
+Thumbs Up
+...
+...
+...
+
+The break statement
+It is used to break the loop without waiting for the condition to false
+The break statement should be inside some if or else part
+
+i = 10
+while i >= 0:
+  print(i, end = ' ')
+  if i % 2 == 1:
+    break;  #Will take you out of the loop
+  i = i // 2
+print("Bye Bye")
+
+Execution Pattern
+i = 10 [10 >= 0: True]
+i= 5 [5 >= 0: True]
+
+Output
+10 5 Bye Bye
+
+What is output of following code-
+i = 1
+while i <= 8:
+  if i % 3 == 0:
+    break
+  print("A", end = ' ')
+  i+=1
+print("Thanks")
+
+Output: ??
+(A) Thanks
+(B) A A Thanks [Correct]
+(C) A A ... 8 times then Thanks
+(D) A A A Thanks
+(E) A Thanks
+
+Execution pattern
+i = 1 [1 <= 8: True]
+i = 2 [2 <= 8: True]
+i = 3 [3 <= 8: True]
+Output
+A A Thanks
+
+while..else statement
+Syntax:
+while condition:
+  statement-X
+  if condition-2
+    break
+else:
+  statement-Y
+statement-Z #this statement is outside else
+
+Execution pattern: When break statement is executed
+condition (T) -> statement-X -> condition-2 (F) -> condition (T) -> statement-X -> condition-02 (T) -> [break statement executed] -> statement-Z
+
+Execution pattern: When break statement is not executed
+condition (T) -> statement-X -> condition-2 (F) -> condition (T) -> statement-X -> condition-02 (F) -> condition (F) -> statement-Y -> statement-Z
+
+Summarization: If loop condition is false then else block will be executed; if break statement is used to break the loop then else part will not be executed.
+
+What is output of following code-
+i = 1 #2
+while i <= 10:
+  #body of while loop starts here
+  print(i, end = ' ')
+  if i % 2 == 1:
+    break
+  else: #this else is of if statement
+    i+=2
+  #body of while loop ends here
+else: #this else is of while statement
+    print("inside else")
+print("At level-0")
+
+Execution [When i = 1]
+i = 1 [i <= 10: T] [1%2 == 1: T]
+
+Output
+1 At level-0
+
+Execution [When i = 2]
+i = 2 [2 <= 10: T] [2 % 2 == 1: F]
+i = 4 [4 <= 10: T] [4 % 2 == 1: F]
+i = 6 [6 <= 10: T] [6 % 2 == 1: F]
+i = 8 [8 <= 10: T] [8 % 2 == 1: F]
+i = 10 [10 <= 10: T] [10 % 2 == 1: F]
+i = 12 [12 <= 10: F]
+
+Output
+2 4 6 8 10 inside else
+At level-0
